@@ -7,7 +7,27 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="ConfirmationPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="InputPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserMenu.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="ConfirmationPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="InputPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserMenu.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

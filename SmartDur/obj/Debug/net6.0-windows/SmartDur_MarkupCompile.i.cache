@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Junpro\SmartDur\obj\Debug\net6.0-windows\
+D:\!!!!Teknologi Informasi\Semester 5\Junpro\SmartDur\SmartDur\obj\Debug\net6.0-windows\
 SmartDur
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-D:\Junpro\SmartDur\App.xaml
-11407045341
+D:\!!!!Teknologi Informasi\Semester 5\Junpro\SmartDur\SmartDur\App.xaml
+41531372621
 
-5-287142964
+10-1928923669
 194-200944676
-MainWindow.xaml;
+ConfirmationPage.xaml;InputPage.xaml;MainWindow.xaml;UserMenu.xaml;
 
-False
+True
 
