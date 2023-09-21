@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\!!!!Teknologi Informasi\\Semester 5\\Junpro\\SmartDur\\SmartDur\\SmartDur.csproj": {}
+    "C:\\Users\\alghi\\Source\\Repos\\mastamaru\\SmartDur\\SmartDur\\SmartDur.csproj": {}
   },
   "projects": {
-    "D:\\!!!!Teknologi Informasi\\Semester 5\\Junpro\\SmartDur\\SmartDur\\SmartDur.csproj": {
+    "C:\\Users\\alghi\\Source\\Repos\\mastamaru\\SmartDur\\SmartDur\\SmartDur.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\!!!!Teknologi Informasi\\Semester 5\\Junpro\\SmartDur\\SmartDur\\SmartDur.csproj",
+        "projectUniqueName": "C:\\Users\\alghi\\Source\\Repos\\mastamaru\\SmartDur\\SmartDur\\SmartDur.csproj",
         "projectName": "SmartDur",
-        "projectPath": "D:\\!!!!Teknologi Informasi\\Semester 5\\Junpro\\SmartDur\\SmartDur\\SmartDur.csproj",
-        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "D:\\!!!!Teknologi Informasi\\Semester 5\\Junpro\\SmartDur\\SmartDur\\obj\\",
+        "projectPath": "C:\\Users\\alghi\\Source\\Repos\\mastamaru\\SmartDur\\SmartDur\\SmartDur.csproj",
+        "packagesPath": "C:\\Users\\alghi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alghi\\Source\\Repos\\mastamaru\\SmartDur\\SmartDur\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\alghi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
