@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -17,6 +18,7 @@ namespace SmartDur
         private double landArea;
         private String selectedCrop;
         private int selectedFertilizerAmount;
+        private NpgsqlConnection conn;
         
         public User(String _username, String _password)
         {
@@ -24,11 +26,38 @@ namespace SmartDur
             this.password = _password;
         }
 
-        public void login()
+        public User(NpgsqlConnection connection)
         {
-
+            this.conn = connection;
         }
-        
+        public bool Login(string username, string password)
+        {
+            try
+            {
+                conn.Open();
+
+                using (var cmd = new NpgsqlCommand("SELECT password FROM pengguna WHERE username = @username", conn))
+                {
+                    cmd.Parameters.AddWithValue("username", username);
+                    var result = cmd.ExecuteScalar()?.ToString();
+
+                    if (result != null && result == password)
+                    {
+                        return true;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                // Exception handling, log it as needed
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return false;
+        }
+
         public void selectLocation()
         {
 

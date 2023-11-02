@@ -69,7 +69,7 @@ namespace SmartDur {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/SmartDur;V1.0.0.0;component/confirmationpage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/SmartDur;component/confirmationpage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\ConfirmationPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

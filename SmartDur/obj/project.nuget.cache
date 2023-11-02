@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Wm0PLSgG2KQRodhQ/j81mKnfZrend7DxQZtf2Ezd3DOFl/eVArn1vvdW35FPq7SPUsM0gEPj+bxDt8fdCz6BcA==",
+  "dgSpecHash": "85AhoCfkMS9+7rucMbvTdBLEI7M3j6qVyI3jjtZjoPQjQeQAbbXbT1LtyPcOsnNbkzZu2QbkPFVWAlEBiIbrsA==",
   "success": true,
   "projectFilePath": "C:\\Users\\alghi\\Source\\Repos\\mastamaru\\SmartDur\\SmartDur\\SmartDur.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\alghi\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\alghi\\.nuget\\packages\\npgsql\\7.0.6\\npgsql.7.0.6.nupkg.sha512",
+    "C:\\Users\\alghi\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
