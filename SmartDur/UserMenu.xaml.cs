@@ -22,6 +22,8 @@ namespace SmartDur
         public UserMenu()
         {
             InitializeComponent();
+            //navigate ke input page (kalo misal mau ganti page karena ini kan form bisa pake kode ini)
+            MainFrame.Navigate(new InputPage());- 
         }
     }
 }

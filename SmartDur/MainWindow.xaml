@@ -6,11 +6,67 @@
         xmlns:local="clr-namespace:SmartDur"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Loaded="Grid_Loaded">
         <TextBox HorizontalAlignment="Center" Margin="0,52,0,0" TextWrapping="Wrap" Text="SmartDur" VerticalAlignment="Top" Width="228" TextChanged="TextBox_TextChanged" FontSize="48"/>
-        <TextBox HorizontalAlignment="Left" Margin="346,0,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Center" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="346,240,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="120"/>
-        <Button Content="SignIn" HorizontalAlignment="Center" Margin="0,284,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Margin="346,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" TextChanged="TextBox_TextChanged_1" AutomationProperties.Name="txtUsername" AutomationProperties.IsRequiredForForm="True">
+            <TextBox.Style>
+                <Style TargetType="{x:Type TextBox}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type TextBox}">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                    <Grid>
+                                        <TextBlock IsHitTestVisible="False" Text="Username" VerticalAlignment="Center" Opacity="0.5" Margin="5,0,0,0">
+                                            <TextBlock.Style>
+                                                <Style TargetType="{x:Type TextBlock}">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TextBox}}}" Value="">
+                                                            <Setter Property="Visibility" Value="Visible"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </TextBlock.Style>
+                                        </TextBlock>
+                                        <ScrollViewer x:Name="PART_ContentHost"/>
+                                    </Grid>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="346,240,0,0" VerticalAlignment="Top" Width="120" AutomationProperties.IsRequiredForForm="True" AutomationProperties.Name="txtPassword">
+            <TextBox.Style>
+                <Style TargetType="{x:Type TextBox}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type TextBox}">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                    <Grid>
+                                        <TextBlock IsHitTestVisible="False" Text="Password" VerticalAlignment="Center" Opacity="0.5" Margin="5,0,0,0">
+                                            <TextBlock.Style>
+                                                <Style TargetType="{x:Type TextBlock}">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TextBox}}}" Value="">
+                                                            <Setter Property="Visibility" Value="Visible"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </TextBlock.Style>
+                                        </TextBlock>
+                                        <ScrollViewer x:Name="PART_ContentHost"/>
+                                    </Grid>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+        <Button Content="SignIn" HorizontalAlignment="Center" Margin="0,284,0,0" VerticalAlignment="Top" Click="Button_Click"/>
 
     </Grid>
 </Window>
