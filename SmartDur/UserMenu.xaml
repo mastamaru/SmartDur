@@ -6,5 +6,9 @@
         xmlns:local="clr-namespace:SmartDur"
         mc:Ignorable="d"
         Title="UserMenu" Height="450" Width="800">
-    
+        <Grid>
+            <!-- Frame untuk menavigasi antar halaman -->
+            <Frame Name="MainFrame" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        </Grid>
+
 </Window>
