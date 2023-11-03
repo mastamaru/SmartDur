@@ -22,7 +22,7 @@ namespace SmartDur
     public partial class MainWindow : Window
     {
         private NpgsqlConnection conn;
-        string connstring = "Host=localhost;Port=5433;Username=postgres;Password=123;Database=SmartDur";
+        string connstring = "Host=localhost;Port=5432;Username=postgres;Password=postgres123;Database=SmartDur";
         public MainWindow()
         {
             InitializeComponent();
