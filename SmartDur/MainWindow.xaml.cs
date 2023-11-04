@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +24,7 @@ namespace SmartDur
     public partial class MainWindow : Window
     {
         private NpgsqlConnection conn;
-        string connstring = "Host=localhost;Port=5432;Username=postgres;Password=postgres123;Database=SmartDur";
+
         public MainWindow()
         {
             InitializeComponent();
@@ -35,8 +37,18 @@ namespace SmartDur
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
-            conn = new NpgsqlConnection(connstring);
+            var root = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            var dotenv = System.IO.Path.Combine(root, ".env");
+            DotEnv.Load(dotenv);
+            string host = Environment.GetEnvironmentVariable("Host");
+            string port = Environment.GetEnvironmentVariable("Port");
+            string username = Environment.GetEnvironmentVariable("Username");
+            string password = Environment.GetEnvironmentVariable("Password");
+            string database = Environment.GetEnvironmentVariable("Database");
 
+            string connstring = string.Format("Host={0};Port={1};Username={2};Password={3};Database={4}", host, port, username, password, database);
+
+            conn = new NpgsqlConnection(connstring);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

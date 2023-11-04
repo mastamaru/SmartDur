@@ -8,7 +8,7 @@
         Title="UserMenu" Height="450" Width="800">
         <Grid>
             <!-- Frame untuk menavigasi antar halaman -->
-            <Frame Name="MainFrame" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            <Frame Name="MainFrame" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" NavigationUIVisibility="Hidden"/>
         </Grid>
 
 </Window>
