@@ -32,7 +32,7 @@
                     <Label FontSize="25" HorizontalAlignment="Center">Pilih Lokasi</Label>
                 </Grid>
                 <Grid Grid.Row="1">
-                    <ComboBox Height="30" Width="250"></ComboBox>
+                    <ComboBox Name="locationBox" Height="30" Width="250" SelectionChanged="ComboBox_SelectionChanged"></ComboBox>
                 </Grid>
             </Grid>
             <Grid Grid.Column="1">
@@ -44,42 +44,12 @@
                     <Label FontSize="25" HorizontalAlignment="Center">Pilih Pupuk</Label>
                 </Grid>
                 <Grid Grid.Row="1">
-                    <ComboBox Height="30" Width="250"></ComboBox>
-                </Grid>
-            </Grid>
-        </Grid>
-        <Grid Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
-                    <Label FontSize="25" HorizontalAlignment="Center">Masukkan Luas Area</Label>
-                </Grid>
-                <Grid Grid.Row="1">
-                    <TextBox Height="30" Width="250"></TextBox>
-                </Grid>
-            </Grid>
-            <Grid Grid.Column="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
-                    <Label FontSize="25" HorizontalAlignment="Center">Pilih Jumlah Pupuk</Label>
-                </Grid>
-                <Grid Grid.Row="1">
-                    <ComboBox Height="30" Width="250"></ComboBox>
+                    <ComboBox Name="fertilizerBox" Height="30" Width="250" SelectionChanged="fertilizerBox_SelectionChanged"></ComboBox>
                 </Grid>
             </Grid>
         </Grid>
         <Grid Grid.Row="3">
-            <Button Height="50" Width="150" FontSize="20">Submit</Button>
+            <Button Height="50" Width="150" FontSize="20" Click="Button_Click">Submit</Button>
         </Grid>
     </Grid>
 </Page>
