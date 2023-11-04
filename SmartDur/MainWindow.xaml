@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid Loaded="Grid_Loaded">
-        <TextBox HorizontalAlignment="Center" Margin="0,52,0,0" TextWrapping="Wrap" Text="SmartDur" VerticalAlignment="Top" Width="228" TextChanged="TextBox_TextChanged" FontSize="48"/>
+        <Label HorizontalAlignment="Center" Margin="0,52,0,0" VerticalAlignment="Top" Width="228" FontSize="48">SmartDur</Label>
         <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Margin="346,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" TextChanged="TextBox_TextChanged_1" AutomationProperties.Name="txtUsername" AutomationProperties.IsRequiredForForm="True">
             <TextBox.Style>
                 <Style TargetType="{x:Type TextBox}">
