@@ -20,9 +20,19 @@ namespace SmartDur
     /// </summary>
     public partial class ConfirmationPage : Page
     {
-        public ConfirmationPage()
+        public ConfirmationPage(string prediction)
         {
             InitializeComponent();
+            cropLabel.Content = prediction;
+
+            Crop crop = Crop.LoadCropByName(prediction);
+            growthLabel.Content = crop.GetGrowthPeriod();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Schedule schedulePage = new Schedule();
+            this.NavigationService.Navigate(schedulePage);
         }
     }
 }
