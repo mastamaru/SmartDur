@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Win32;
 using Npgsql;
 
 namespace SmartDur
@@ -58,13 +59,16 @@ namespace SmartDur
 
             Admin admin = new Admin(conn);
             User user = new User(conn);
+
             if (admin.Login(username, password))
             {
                 // TODO: Navigasi ke halaman admin
                 MessageBox.Show("Selamat datang " + username + "!!");
                 AdminMenu adminmenu = new AdminMenu();
+                FertilizerPage fertilizerPage = new FertilizerPage();
                 this.Close();
-                adminmenu.Show();
+                //adminmenu.Show();
+                fertilizerPage.Show();
             }
             else if (user.Login(username, password))
             {
@@ -73,7 +77,8 @@ namespace SmartDur
                 this.Close();
                 userMenu.Show();
             }
-            else { 
+            else
+            {
                 MessageBox.Show("Username / Password Anda salah.");
             }
 
@@ -93,5 +98,12 @@ namespace SmartDur
         {
 
         }
+        private void btnRegister_Click(object sender, RoutedEventArgs e)
+        {
+            Register register = new Register();
+            this.Close();
+            register.Show();
+        }
+
     }
 }
