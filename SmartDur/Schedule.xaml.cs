@@ -22,8 +22,12 @@ namespace SmartDur
     public partial class Schedule : Page
     {
         public Schedule()
-        {
+        {   
             InitializeComponent();
+            
+            
+            //Crop crop = Crop.LoadCropByName(prediction);
+            // growthLabel.Content = crop.GetGrowthPeriod();
         }
     }
 }

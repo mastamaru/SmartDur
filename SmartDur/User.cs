@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Transactions;
+using System.Windows;
 
 namespace SmartDur
 {
@@ -20,6 +21,7 @@ namespace SmartDur
         private String selectedCrop;
         private int selectedFertilizerAmount;
         private NpgsqlConnection conn;
+        
         
         public User(String _username, String _password)
         {
@@ -38,6 +40,19 @@ namespace SmartDur
         {
             get { return loggedInUser; }
         }
+
+        private static int loggedInUserId;
+        public static int LoggedInUserId
+        {
+            get { return loggedInUserId; }
+        }
+
+        public int GetIdUser()
+        {
+            
+            return loggedInUserId;
+        }
+
         public bool Login(string username, string password)
         {
             try
@@ -52,6 +67,7 @@ namespace SmartDur
                     if (result != null && result == password)
                     {
                         loggedInUser = username;
+                        GetUserLoginId(username);
                         return true;
                     }
                 }
@@ -104,9 +120,36 @@ namespace SmartDur
 
         }
 
-        public static bool IsUserLoggedIn()
+        public void GetUserLoginId(string username)
         {
-            return !string.IsNullOrEmpty(loggedInUser); 
+
+            try
+            {
+                
+
+                using (var cmd = new NpgsqlCommand("SELECT id_user FROM pengguna WHERE username = @username", conn))
+                {
+                    cmd.Parameters.AddWithValue("username", username);
+                    var result = cmd.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        loggedInUserId = Convert.ToInt32(result);
+                        MessageBox.Show("User ID Retrieved: " + loggedInUserId); // Output for debugging
+                    }
+                    else
+                    {
+                        MessageBox.Show("User ID not found for username: " + username);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error retrieving user ID: " + ex.Message); // Output for debugging
+                                                                              // Handle the exception, log it, or raise an alert as needed
+            }
+            //return !string.IsNullOrEmpty(loggedInUser);
+            //return 0;
         }
     }
 }
