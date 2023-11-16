@@ -18,6 +18,7 @@ namespace SmartDur
     /// <summary>
     /// Interaction logic for Schedule.xaml
     /// </summary>
+    /// Schedule
     public partial class Schedule : Page
     {
         public Schedule()
