@@ -1,4 +1,5 @@
-﻿using Npgsql;
+﻿using Microsoft.Extensions.Logging.Abstractions;
+using Npgsql;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,6 +31,13 @@ namespace SmartDur
         {
             this.conn = connection;
         }
+
+        private static string loggedInUser; 
+
+        public static string LoggedInUser
+        {
+            get { return loggedInUser; }
+        }
         public bool Login(string username, string password)
         {
             try
@@ -43,6 +51,7 @@ namespace SmartDur
 
                     if (result != null && result == password)
                     {
+                        loggedInUser = username;
                         return true;
                     }
                 }
@@ -93,6 +102,11 @@ namespace SmartDur
         public void goToScheduling()
         {
 
+        }
+
+        public static bool IsUserLoggedIn()
+        {
+            return !string.IsNullOrEmpty(loggedInUser); 
         }
     }
 }
