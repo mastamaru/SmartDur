@@ -135,7 +135,7 @@ namespace SmartDur
                     if (result != null && result != DBNull.Value)
                     {
                         loggedInUserId = Convert.ToInt32(result);
-                        MessageBox.Show("User ID Retrieved: " + loggedInUserId); // Output for debugging
+                        //MessageBox.Show("User ID Retrieved: " + loggedInUserId); // Output for debugging
                     }
                     else
                     {
@@ -150,6 +150,30 @@ namespace SmartDur
             }
             //return !string.IsNullOrEmpty(loggedInUser);
             //return 0;
+        }
+
+        public bool CheckUserDataExist(int userId)
+        {
+            try
+            {
+                conn.Open();
+                using(var cmd = new NpgsqlCommand("SELECT COUNT(*) FROM user_data WHERE id_user = @userId", conn))
+                {
+                    cmd.Parameters.AddWithValue("userId", userId);
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    return count > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error Checking Existances of user ID: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
     }
 }
