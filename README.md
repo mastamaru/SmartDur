@@ -1,6 +1,6 @@
 # SmartDur
-Smart Nandur - Aplikasi Desktop berbasis Sistem Rekomendasi dan Perencanaan Pertanian
-
+- Smart Nandur - Aplikasi Desktop berbasis Sistem Rekomendasi dan Perencanaan Pertanian. Project ini kami buat untuk memenuhi tugas mata kuliah Proyek Junior Teknologi Informasi.
+- [Github Pages](https://mastamaru.github.io/SmartDur)
 # Team : BAM <br>
   **Member list:**
   1. Bagus Rakadyanto Oktavianto Putra - 21/474401/TK/52343<br>
@@ -16,8 +16,10 @@ Smart Nandur - Aplikasi Desktop berbasis Sistem Rekomendasi dan Perencanaan Pert
 - **User Features**
   1. User bisa mendapatkan rekomendasi tanaman yang dapat ditanam dan durasi penanaman hingga panen di lokasi yang dipilih
   2. User bisa mendapatkan penjadwalan untuk menanam tanaman yang direkomendasikan hingga waktu panen
-  
+
+
 ## Panduan Aplikasi
+0. Unduh aplikasi yang tersedia di tautan [ini](https://drive.google.com/drive/folders/1XZQo9yDBWiU10KPhxJ48dHB0LVDf1pMP?usp=drive_link)
 1. Jalankan SmartDur.exe untuk memulai aplikasi.
 2. Daftarkan diri Anda (jika belum memilki akun) dengan menekan tombol register.
 3. Masukkan username dan password yang Anda inginkan. Setelah selesai, tekan tombol register
