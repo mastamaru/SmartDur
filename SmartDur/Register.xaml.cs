@@ -52,6 +52,9 @@ namespace SmartDur
                 if (result == 1)
                 {
                     MessageBox.Show("Data berhasil dimasukkan!");
+                    MainWindow mainWindow = new MainWindow();
+                    this.Close();
+                    mainWindow.Show();
                 }
                 else
                 {

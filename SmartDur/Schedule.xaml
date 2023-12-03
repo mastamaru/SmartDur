@@ -9,6 +9,23 @@
       Title="Schedule">
 
     <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1">
+                <Label Name="cropName" FontSize="24" HorizontalAlignment="Center"></Label>
+                <TextBlock Name="cropDesc" HorizontalAlignment="Center" TextWrapping="Wrap" MaxWidth="400" FontSize="17" Text="" Width="auto" Height="auto" VerticalAlignment="Center" />
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1">
         <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Margin="20">
             <!-- Judul -->
             <TextBlock Text="SmartDur" FontSize="36" FontWeight="Bold" Margin="0 0 0 20" HorizontalAlignment="Center" />
@@ -17,7 +34,23 @@
             <DatePicker Name="datePicker" Width="200" Margin="0 0 0 20"/>
 
             <!-- Tampilan Jadwal Kalender -->
+<<<<<<< Updated upstream
             <Calendar Name="calendar" Width="400" Height="300"/>
+=======
+            <Calendar Name="calendar" CalendarDayButtonStyle="{StaticResource HighlightStyle}"/>
+>>>>>>> Stashed changes
         </StackPanel>
+        </Grid>
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1">
+                <Label FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Top">Lama Waktu Panen:</Label>
+                <Label Name="cropGrowth" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+            </Grid>
+        </Grid>
     </Grid>
 </Page>

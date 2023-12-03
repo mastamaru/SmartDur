@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SmartDur"
         mc:Ignorable="d"
-        Title="Register" Height="450" Width="800">
+        Title="Register SmartDur" Height="450" Width="800">
     <Grid>
         <Label Content="Register Account" Margin="226,65,0,0" VerticalAlignment="Top" FontSize="48" HorizontalAlignment="Left"/>
         <Label Content="Username" HorizontalAlignment="Left" Margin="262,0,0,0" VerticalAlignment="Center" Foreground="Black"/>

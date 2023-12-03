@@ -31,7 +31,14 @@ namespace SmartDur
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+<<<<<<< Updated upstream
             Schedule schedulePage = new Schedule();
+=======
+            conn = new NpgsqlConnection(connstring);
+            LoadDataToDatabase();
+
+            Schedule schedulePage = new Schedule(Convert.ToDouble(growthLabel.Content));
+>>>>>>> Stashed changes
             this.NavigationService.Navigate(schedulePage);
         }
     }

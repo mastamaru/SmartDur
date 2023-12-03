@@ -38,7 +38,8 @@ namespace SmartDur
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
-            var root = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            //var root = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            var root = Directory.GetCurrentDirectory();
             var dotenv = System.IO.Path.Combine(root, ".env");
             DotEnv.Load(dotenv);
             string host = Environment.GetEnvironmentVariable("Host");
@@ -55,7 +56,7 @@ namespace SmartDur
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             string username = txtUsername.Text;
-            string password = txtPassword.Text;
+            string password = txtPassword.Password.ToString();
 
             Admin admin = new Admin(conn);
             User user = new User(conn);

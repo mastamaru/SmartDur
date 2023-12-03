@@ -164,7 +164,8 @@ namespace SmartDur
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var root = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            //var root = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            var root = Directory.GetCurrentDirectory();
             var dotenv = System.IO.Path.Combine(root, ".env");
             DotEnv.Load(dotenv);
             string ml_backend = Environment.GetEnvironmentVariable("ML_Backend");
