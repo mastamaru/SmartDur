@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,13 +20,9 @@ namespace SmartDur
     /// <summary>
     /// Interaction logic for Schedule.xaml
     /// </summary>
+    /// Scheduler
     public partial class Schedule : Page
     {
-<<<<<<< Updated upstream
-        public Schedule()
-        {
-            InitializeComponent();
-=======
 
         private NpgsqlConnection conn;
         private NpgsqlCommand cmd;
@@ -161,7 +159,10 @@ namespace SmartDur
             }
 
             
->>>>>>> Stashed changes
         }
+
+
+
+
     }
 }

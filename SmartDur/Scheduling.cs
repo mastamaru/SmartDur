@@ -1,30 +1,25 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-<<<<<<< Updated upstream
-=======
 using System.Windows;
 using System.Xml.Linq;
 using System.Xml.Serialization;
 using static SmartDur.Crop;
->>>>>>> Stashed changes
 
 namespace SmartDur
 {
     internal class Scheduling
     {
         //declaring attribute for scheduling
-        private int recommendedAmount;
-        private int fertilizerAmount;
+        //private int recommendedAmount;
+        //private int fertilizerAmount;
 
-        private Crop crop;
-        private Fertilizer fertilizer;
+        //private Crop crop;
+        //private Fertilizer fertilizer;
 
-<<<<<<< Updated upstream
-        public int getRecommendedAmount()
-=======
         //public int getRecommendedAmount()
         //{
         //  return recommendedAmount;
@@ -48,22 +43,11 @@ namespace SmartDur
         private DateTime selectedDate;
 
         public double GrowthPeriod
->>>>>>> Stashed changes
         {
-            return recommendedAmount;
-        }
-        public int getFertilizerAmount()
-        {
-            return fertilizerAmount;
-        }
-        public Crop getCrop()
-        {
-            return crop;
+            get { return growthPeriod; }
+            set { growthPeriod = value; }
         }
 
-<<<<<<< Updated upstream
-        public Fertilizer getFertilizer() { return fertilizer; }
-=======
         public string CropName
         {
             get { return cropName; }
@@ -259,6 +243,5 @@ namespace SmartDur
 
             return false; // Dates not found
         }
->>>>>>> Stashed changes
     }
 }

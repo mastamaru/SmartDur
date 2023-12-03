@@ -73,10 +73,27 @@ namespace SmartDur
             }
             else if (user.Login(username, password))
             {
-                MessageBox.Show("Selamat datang " + username + "!!");
-                UserMenu userMenu = new UserMenu();
-                this.Close();
-                userMenu.Show();
+                int userId = user.GetIdUser();
+                if(user.CheckUserDataExist(userId))
+                {
+                    MessageBox.Show("Selamat datang " + username + "!!" + "\n Mengarahkan ke Pejadwalan");
+                    Schedule schedulePage = new Schedule();
+                    //this.Close();
+                    MainFrame.NavigationService.Navigate(schedulePage);
+                    //schedulePage.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Selamat datang " + username + "!!");
+                    UserMenu userMenu = new UserMenu();
+                    this.Close();
+                    userMenu.Show();
+                }
+
+                //MessageBox.Show("Selamat datang " + username + "!!");
+                //UserMenu userMenu = new UserMenu();
+                //this.Close();
+                //userMenu.Show();
             }
             else
             {

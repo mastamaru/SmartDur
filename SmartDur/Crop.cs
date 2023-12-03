@@ -10,15 +10,22 @@ namespace SmartDur
 {
     internal class Crop
     {
+        private int id_crop;
         private string name;
         private string description;
         private double growthPeriod;
 
-        public Crop(string name, string description, double growthPeriod)
+        public Crop(int id_crop, string name, string description, double growthPeriod)
         {
+            this.id_crop = id_crop;
             this.name = name;
             this.description = description;
             this.growthPeriod = growthPeriod;
+        }
+
+        public int GetIdCrop()
+        {
+            return id_crop;
         }
 
         public string GetName()
@@ -53,7 +60,7 @@ namespace SmartDur
             {
                 connection.Open();
 
-                string query = "SELECT name, description, growth_period FROM crop WHERE name = @cropName";
+                string query = "SELECT id_crop, name, description, growth_period FROM crop WHERE name = @cropName";
 
                 using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
                 {
@@ -63,11 +70,12 @@ namespace SmartDur
                     {
                         if (reader.Read())
                         {
-                            string name = reader.GetString(0);
-                            string description = reader.GetString(1);
-                            double growthPeriod = reader.GetDouble(2);
+                            int id_crop = reader.GetInt32(0);
+                            string name = reader.GetString(1);
+                            string description = reader.GetString(2);
+                            double growthPeriod = reader.GetDouble(3);
 
-                            return new Crop(name, description, growthPeriod);
+                            return new Crop(id_crop, name, description, growthPeriod);
                         }
                     }
                 }

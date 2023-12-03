@@ -8,6 +8,27 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Schedule">
 
+    <Page.Resources>
+        <local:DateIsInRangeConverter x:Key="DateIsInRangeConverter" />
+        <Style x:Key="HighlightStyle" TargetType="CalendarDayButton">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="CalendarDayButton">
+                        <Grid>
+                            <Rectangle x:Name="HighlightBackground" Fill="Transparent" />
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <DataTrigger Binding="{Binding Converter={StaticResource DateIsInRangeConverter}}" Value="True">
+                                <Setter TargetName="HighlightBackground" Property="Fill" Value="Yellow" />
+                            </DataTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
     <Grid Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
@@ -34,11 +55,7 @@
             <DatePicker Name="datePicker" Width="200" Margin="0 0 0 20"/>
 
             <!-- Tampilan Jadwal Kalender -->
-<<<<<<< Updated upstream
-            <Calendar Name="calendar" Width="400" Height="300"/>
-=======
             <Calendar Name="calendar" CalendarDayButtonStyle="{StaticResource HighlightStyle}"/>
->>>>>>> Stashed changes
         </StackPanel>
         </Grid>
         <Grid Grid.Column="2">

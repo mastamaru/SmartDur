@@ -1,4 +1,5 @@
-﻿using Npgsql;
+﻿using Microsoft.Extensions.Logging.Abstractions;
+using Npgsql;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Transactions;
+using System.Windows;
 
 namespace SmartDur
 {
@@ -20,6 +22,7 @@ namespace SmartDur
         private int selectedFertilizerAmount;
         private NpgsqlConnection conn;
         
+        
         public User(String _username, String _password)
         {
             this.username = _username;
@@ -30,6 +33,26 @@ namespace SmartDur
         {
             this.conn = connection;
         }
+
+        private static string loggedInUser; 
+
+        public static string LoggedInUser
+        {
+            get { return loggedInUser; }
+        }
+
+        private static int loggedInUserId;
+        public static int LoggedInUserId
+        {
+            get { return loggedInUserId; }
+        }
+
+        public int GetIdUser()
+        {
+            
+            return loggedInUserId;
+        }
+
         public bool Login(string username, string password)
         {
             try
@@ -43,6 +66,8 @@ namespace SmartDur
 
                     if (result != null && result == password)
                     {
+                        loggedInUser = username;
+                        GetUserLoginId(username);
                         return true;
                     }
                 }
@@ -93,6 +118,62 @@ namespace SmartDur
         public void goToScheduling()
         {
 
+        }
+
+        public void GetUserLoginId(string username)
+        {
+
+            try
+            {
+                
+
+                using (var cmd = new NpgsqlCommand("SELECT id_user FROM pengguna WHERE username = @username", conn))
+                {
+                    cmd.Parameters.AddWithValue("username", username);
+                    var result = cmd.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        loggedInUserId = Convert.ToInt32(result);
+                        //MessageBox.Show("User ID Retrieved: " + loggedInUserId); // Output for debugging
+                    }
+                    else
+                    {
+                        MessageBox.Show("User ID not found for username: " + username);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error retrieving user ID: " + ex.Message); // Output for debugging
+                                                                              // Handle the exception, log it, or raise an alert as needed
+            }
+            //return !string.IsNullOrEmpty(loggedInUser);
+            //return 0;
+        }
+
+        public bool CheckUserDataExist(int userId)
+        {
+            try
+            {
+                conn.Open();
+                using(var cmd = new NpgsqlCommand("SELECT COUNT(*) FROM user_data WHERE id_user = @userId", conn))
+                {
+                    cmd.Parameters.AddWithValue("userId", userId);
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    return count > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error Checking Existances of user ID: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
     }
 }

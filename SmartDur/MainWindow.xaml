@@ -14,6 +14,6 @@
         <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="350,254,0,0" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="btnRegister" Content="Register" HorizontalAlignment="Left" Margin="353,284,0,0" VerticalAlignment="Top" Click="btnRegister_Click"/>
         <Button x:Name="btnLogin" Content="SignIn" HorizontalAlignment="Left" Margin="419,284,0,0" VerticalAlignment="Top" Click="Button_Click"/>
-
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" />
     </Grid>
 </Window>
